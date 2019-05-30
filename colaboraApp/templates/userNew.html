@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="fab">
+  <button class="main">
+  </button>
+  <ul>
+    <li>
+      <button id="opcao1">
+      ⎈
+      </button>
+    </li>
+    <li>
+      <button id="opcao2">
+      ⎗
+      </button>
+    </li>
+    <li>
+      <button id="opcao3">
+      ☏
+      </button>
+    </li>
+  </ul>
+</div>
+
+            <div id="card_register" class="card " style="width:30%">
+             <div class="card-body">
+                   <form  method="post">
+                       {% csrf_token %}
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username"  placeholder="Username" name="username">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+  </div>
+   <div class="form-group">
+    <label for="tipouser">TIpo de Usuário</label>
+    <select class="form-control" id="tipouser" name="tipo-user">
+      <option value="" disabled selected >------</option>
+      <option value="Administrador">Administrador</option>
+      <option value="Usuario">Usuário</option>
+    </select>
+  </div>
+ <div class="form-group">
+    <label for="senha">Senha</label>
+    <input type="password" class="form-control" id="senha" placeholder="Password" name="password">
+  </div>
+  <button type="submit" class="btn btn-info">Registrar <i class="fas fa-book"></i></button>
+</form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

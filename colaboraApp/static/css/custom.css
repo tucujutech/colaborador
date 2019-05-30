@@ -1,0 +1,125 @@
+body{
+ background-color:#fafafa;
+}
+
+nav{
+background-color:white;
+-webkit-box-shadow: 0px 6px 18px -10px rgba(0,0,0,0.59);
+-moz-box-shadow: 0px 6px 18px -10px rgba(0,0,0,0.59);
+box-shadow: 0px 6px 18px -10px rgba(0,0,0,0.59);
+
+}
+
+
+.fab{
+  position: fixed;
+  bottom:40px;
+  left:75px;
+}
+
+.fab button{
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+  background-color: #26c6da ;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  font-size: 24px;
+  color: white;
+
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab button:focus{
+  outline: none;
+}
+
+.fab button.main{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #00acc1;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.fab button.main:before{
+  content: '\2630';
+}
+
+.fab ul{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  padding:0;
+  padding-right:5px;
+  margin:0;
+  list-style:none;
+  z-index:10;
+
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab ul li{
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: -10%;
+  opacity: 0;
+
+  -webkit-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+
+
+.fab button.main:active,
+.fab button.main:focus{
+  outline: none;
+  background-color: #00acc1;
+  box-shadow: 0 3px 8px rgba(0,0,0,.5);
+ }
+
+.fab button.main:active:before,
+.fab button.main:focus:before{
+  content: '↑';
+}
+
+.fab button.main:active + ul,
+.fab button.main:focus + ul{
+  bottom: 70px;
+}
+
+.fab button.main:active + ul li,
+.fab button.main:focus + ul li{
+  margin-bottom: 10px;
+  opacity: 1;
+}
+
+.fab button.main:active + ul li:hover label,
+.fab button.main:focus + ul li:hover label{
+  opacity: 1;
+}
+
+
+#card_register{
+  margin-left:35%;
+  margin-top:5%;
+}
+
+#card_register:hover,
+#card_register:focus{
+-webkit-box-shadow: 0px 6px 18px -10px #80deea;
+-moz-box-shadow: 0px 6px 18px -10px #80deea;
+box-shadow: 0px 6px 18px -10px #80deea;
+
+}
+

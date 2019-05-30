@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="fab">
+  <button class="main">
+  </button>
+  <ul>
+    <li>
+      <button id="opcao1">
+      ⎈
+      </button>
+    </li>
+    <li>
+      <button id="opcao2">
+      ⎗
+      </button>
+    </li>
+    <li>
+      <button id="opcao3">
+      ☏
+      </button>
+    </li>
+  </ul>
+</div>
+
+            <div id="card_register" class="card " style="width:30%">
+             <div class="card-body">
+                   <form  method="post">
+                       {% csrf_token %}
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+  {% endfor %}
+                     {% for form in form.visible_fields %}
+    <div class="form-group">
+      {{ form.label_tag }}
+      {% render_field form class="form-control" %}
+      {% if form.help_text %}
+        <small class="form-text text-muted">{{ form.help_text }}</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+  <button type="submit" class="btn btn-info">Registrar <i class="fas fa-database"></i></button>
+</form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

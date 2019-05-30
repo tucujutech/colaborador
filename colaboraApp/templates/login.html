@@ -1,0 +1,24 @@
+{% extends 'baselogin.html' %}
+{%block content %}
+   <div id="card_register" class="card " style="width:30%">
+       <div class="card-header bg-info text-white">
+           <h4>Colaborador</h4>
+       </div>
+             <div class="card-body">
+                   <form  method="post" action=".?next={{ redirect_to }}">
+                       {% csrf_token %}
+  <div class="form-group">
+    <label for="username" class="text-info">Username</label>
+    <input type="text" class="form-control" id="username"  placeholder="Username" name="username">
+  </div>
+ <div class="form-group">
+    <label for="senha" class="text-info">Senha</label>
+    <input type="password" class="form-control" id="senha" placeholder="Password" name="password">
+  </div>
+  <button type="submit" class="btn btn-info">Login <i class="fas fa-sign-in-alt"></i></button>
+</form>
+              </div>
+            </div>
+
+
+{% endblock %}

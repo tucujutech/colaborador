@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{%block content %}
+ <div class="container-fluid">
+     <div class="row">
+         <div class="col-4">
+             <a href="{% url 'colaboradorNew' %}">
+             <div class="card"  style="margin-top:20px;background-color:#00838f " data-toggle="tooltip" data-placement="bottom" title="Cadastrar um Colaborador">
+                   <div class="card-body nabbar-light">
+                        <i class="far fa-address-card fa-10x" style="color:white; margin-left:90px"></i>
+                   </div>
+             </div>
+             </a>
+         </div>
+         <div class="col-4">
+             <a href="#">
+             <div class="card"  style="margin-top:20px;background-color:#00838f ">
+                 <div class="card-body nabbar-light">
+                        <i class="far fa-list-alt fa-10x" style="color:white; margin-left:90px"></i>
+                 </div>
+             </div>
+             </a>
+         </div>
+         <div class="col-4">
+             <a href="#">
+             <div class="card"  style="margin-top:20px;background-color:#00838f ">
+                 <div class="card-body nabbar-light">
+                        <i class="fas fa-university fa-10x" style="color:white; margin-left:90px"></i>
+                 </div>
+             </div>
+             </a>
+         </div>
+     </div>
+
+     <div class="row">
+         <div class="col-4">
+             <a href="#">
+             <div class="card"  style="margin-top:20px;background-color:#00838f ">
+                 <div class="card-body nabbar-light">
+                        <i class="fas fa-list-ol fa-10x" style="color:white; margin-left:90px"></i>
+                 </div>
+             </div>
+             </a>
+         </div>
+         <div class="col-4">
+             <a href="{% url 'usernew' %}">
+             <div class="card"  style="margin-top:20px;background-color:#00838f " data-toggle="tooltip" data-placement="bottom" title="Cadastrar um Usuário">
+                 <div class="card-body nabbar-light">
+                        <i class="fas fa-user-plus fa-10x" style="color:white; margin-left:90px"></i>
+                 </div>
+             </div>
+             </a>
+         </div>
+         {% if request.user.is_superuser %}
+         <div class="col-4">
+             <a href="{% url 'listuser' %}">
+             <div class="card"  style="margin-top:20px;background-color:#00838f " data-toggle="tooltip" data-placement="bottom" title="Listar Usuário">
+                 <div class="card-body nabbar-light">
+                        <i class="fas fa-address-book fa-10x" style="color:white; margin-left:90px"></i>
+                 </div>
+             </div>
+             </a>
+         </div>
+         {% endif %}
+     </div>
+ </div>
+
+{% endblock %}
